@@ -1,5 +1,5 @@
 # 文件上传以及腾讯云对象存储用法示例
-Pom中引入：
+## 引入腾讯云存储相关jar包
 ```
 <dependency>
     <groupId>com.qcloud</groupId>
@@ -18,7 +18,7 @@ Pom中引入：
     </exclusions>
 </dependency>
 ```
-将文件上传到本地服务器并转存到腾讯云服务器中：
+## 将文件上传到本地服务器并转存到腾讯云服务器中
 ```
 @RequestMapping(value = "uploadFile", produces = {"application/json; charset=utf-8"})
 public String uploadFile(@RequestParam("file") MultipartFile file, HttpServletRequest request){
@@ -43,6 +43,6 @@ public String uploadFile(@RequestParam("file") MultipartFile file, HttpServletRe
     return result;
 }
 ```
-文件成功上传到腾讯云服务器后将source_url路径保存到数据库中。
+## 文件成功上传到腾讯云服务器后将source_url路径保存到数据库中。
 
 

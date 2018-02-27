@@ -1,5 +1,5 @@
 # mybatis使用说明
-pom.xml中引入jar包：
+## 引入mybatis相关jar包
 ```
 <!-- mysql依赖 -->
 <dependency>
@@ -18,7 +18,7 @@ pom.xml中引入jar包：
     <artifactId>mybatis-generator-maven-plugin</artifactId>
     <version>1.3.2</version>
 </dependency>
-mybatis_generator自动生成mapper.xml的插件：
+## mybatis_generator自动生成mapper.xml的插件
 <profiles>
     <profile>
         <id>mybatis_generator</id>
@@ -54,7 +54,7 @@ mybatis_generator自动生成mapper.xml的插件：
     </profile>
 </profiles>
 ```
-配置文件：
+## 配置文件
 ```
 #mysql config
 spring.datasource.url=jdbc:mysql://localhost:3306/wecloud_demo?useUnicode=true&amp;characterEncoding=UTF-8
@@ -116,7 +116,8 @@ generatorConfig.xml
     </context>
 </generatorConfiguration>
 ```
-定义UserInfo实体类和在wecloud_demo数据库中创建对应的userinfo表。
+## 类定义
+定义UserInfo实体类和在wecloud_demo数据库中创建对应的userinfo表。<br/>
 定义UserInfoMapper类：
 ```
 package com.navinfo.wecloud.demo.mapper;
@@ -153,8 +154,8 @@ public interface UserInfoMapper {
     int updateByPrimaryKey(UserInfo record);
 }
 ```
-Profiles中勾选mybatis_generator启动项目，会在resources的sqlmap文件夹下生成对应的UserInfoMapper.xml文件。
-Mybatis分页用法：
+Profiles中勾选mybatis_generator启动项目，会在resources的sqlmap文件夹下生成对应的UserInfoMapper.xml文件。<br/>
+## Mybatis分页用法
 定义分页插件：
 ```
 package com.navinfo.wecloud.demo.plugin;

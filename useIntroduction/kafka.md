@@ -1,17 +1,17 @@
 # kafka使用说明
-引入kafka相关jar包：
+## 引入kafka相关jar包
 ```
 <dependency>
     <groupId>com.navinfo.wecloud</groupId>
     <artifactId>wecloud-starter-kafka</artifactId>
 </dependency>
 ```
-在Application中引用注解：
+## 在Application中引用注解
 ```
 @EnableKafkaProducer
 @EnableKafkaConsumer
 ```
-在application.properties中添加kafka配置：
+## 在application.properties中添加kafka配置
 ```
 #kafka producer config
 wecloud.kafka.producer.servers=localhost:9092
@@ -46,7 +46,7 @@ wecloud.kafka.consumer.ssl.keystorePassword=
 wecloud.kafka.consumer.autoOffsetReset=latest
 wecloud.kafka.consumer.service.demo_1.0=com.navinfo.wecloud.demo.kafka.KafkaConsumerHandler
 ```
-kafka生产者和消费者代码示例如下：
+## kafka生产者和消费者代码示例
 ```
 /**
  * @Desc: 往kafka发送数据
