@@ -1,5 +1,6 @@
 # 基本用法
-本地开发模式勾选右侧profiles中的local和wdnexus两项,如图：![](/assets/img4.png)
+本地开发模式勾选右侧profiles中的local和wdnexus两项,如图：
+![](/assets/img4.png)
 local为本地开发模式，项目运行自动读取配置文件application.properties。
 wdnexus为maven私服配置,勾选后将从私服库https://wdnexus.mapbar.com/content/groups/public/下下载wecloud框架。
 项目打包部署的时候需要勾选sandbox和wdnexus选项，选择sandbox项进行打包则不会将配置文件打包进去，这样方便以后动态修改配置文件。
