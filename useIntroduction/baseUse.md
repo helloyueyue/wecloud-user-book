@@ -64,4 +64,27 @@ public RestTemplate restTemplate(){
     return new RestTemplate(httpRequestFactory);
 }
 ```
+然后就可以在项目中这样使用RestTemplate:
+```
+@Autowired
+private RestTemplate restTemplate;
+```
+RestTemplate的Get请求用法：
+```
+String result = restTemplate.getForObject(testUrl1+"?location="+location,String.class);
+```
+
+RestTemplate的Post请求用法1（传Map）：
+```
+Map<String, String> requestParam = new HashMap<>();
+requestParam.put("sid", sid);
+String result = restTemplate.postForObject(testUrl2,requestParam,String.class);
+```
+RestTemplate的Post请求用法2（传对象）：
+```
+PostRequestResult result = restTemplate.postForObject(testUrl2,testPostRequest, PostRequestResult.class);
+```
+
+
+
 
