@@ -1,6 +1,6 @@
 # 文件上传以及腾讯云对象存储用法示例
 ## 引入腾讯云存储相关jar包
-```
+```xml:pom.xml
 <dependency>
     <groupId>com.qcloud</groupId>
     <artifactId>cos_api</artifactId>
@@ -43,6 +43,6 @@ public String uploadFile(@RequestParam("file") MultipartFile file, HttpServletRe
     return result;
 }
 ```
-## 文件成功上传到腾讯云服务器后将source_url路径保存到数据库中。
+## 文件成功上传到腾讯云服务器后将source_url路径保存到数据库中
 
 

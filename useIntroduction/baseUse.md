@@ -2,11 +2,11 @@
 本地开发模式勾选右侧profiles中的local和wdnexus两项,如图：<br/>
 ![](/assets/img4.png)<br/>
 local为本地开发模式，项目运行自动读取配置文件application.properties。<br/>
-wdnexus为maven私服配置,勾选后将从私服库https://wdnexus.mapbar.com/content/groups/public/下下载wecloud框架。<br/>
+wdnexus为maven私服配置,勾选后将从[私服库](https://wdnexus.mapbar.com/content/groups/public/)下载wecloud框架。<br/>
 项目打包部署的时候需要勾选sandbox和wdnexus选项，选择sandbox项进行打包则不会将配置文件打包进去，这样方便以后动态修改配置文件。
 ## 搭建简单的SpringBoot项目
 建立基本的springboot项目结构,在Application中添加注解自动扫描包加载配置文件，基础的Application启动类示例如下：
-```
+```java:Application.java
 @EnableAutoConfiguration
 @Configuration
 @ComponentScan(basePackages = {"com.navinfo.wecloud.demo"})
@@ -41,7 +41,7 @@ public class Application {
 接口返回可以使用Wecloud中封装的通用类：<br/>
 com.navinfo.wecloud.common.rest.response.CommonResult<br/>
 您可以这样使用来返回不同的状态码和提示信息以及data数据体：
-```
+```java:ApiRequestController.java
 CommonResult commonResult=new CommonResult();
 Object result =…
 commonResult.setCode(200);
@@ -54,8 +54,8 @@ commonResult.setData(result);
 ## RestTemplate使用
 下面我们来介绍一下RestTemplate的使用：<br/>
 在项目中调用第三方的http接口我们常常使用RestTemplate。<br/>
-在Application启动类中注册Bean.
-```
+在Application启动类中注册Bean：
+```java:Application.java
 @Bean
 public RestTemplate restTemplate(){
     HttpComponentsClientHttpRequestFactory httpRequestFactory = new HttpComponentsClientHttpRequestFactory();
@@ -66,7 +66,7 @@ public RestTemplate restTemplate(){
     return new RestTemplate(httpRequestFactory);
 }
 ```
-然后就可以在项目中这样使用RestTemplate:
+然后就可以在项目中这样使用RestTemplate：
 ```
 @Autowired
 private RestTemplate restTemplate;

@@ -1,18 +1,18 @@
 # kafka使用说明
 ## 引入kafka相关jar包
-```
+```xml:pom.xml
 <dependency>
     <groupId>com.navinfo.wecloud</groupId>
     <artifactId>wecloud-starter-kafka</artifactId>
 </dependency>
 ```
-## 在Application中引用注解
-```
+## 在启动类中引用注解
+```java:Application.java
 @EnableKafkaProducer
 @EnableKafkaConsumer
 ```
-## 在application.properties中添加kafka配置
-```
+## 配置文件中添加kafka配置
+```properties:application.properties
 #kafka producer config
 wecloud.kafka.producer.servers=localhost:9092
 wecloud.kafka.producer.keySerializerClass=org.apache.kafka.common.serialization.StringSerializer
@@ -47,7 +47,7 @@ wecloud.kafka.consumer.autoOffsetReset=latest
 wecloud.kafka.consumer.service.demo_1.0=com.navinfo.wecloud.demo.kafka.KafkaConsumerHandler
 ```
 ## kafka生产者和消费者代码示例
-```
+```java:KafkaProducer.java
 /**
  * @Desc: 往kafka发送数据
  * @Author: ZhangYue
@@ -98,7 +98,8 @@ public class KafkaProducer {
 
 
 }
-
+```
+```java:KafkaConsumerHandler.java
 /**
  * @Desc: 消费kafka数据
  * @Author: ZhangYue

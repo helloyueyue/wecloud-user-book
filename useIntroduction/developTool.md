@@ -4,7 +4,7 @@
 ![](/assets/img1.png)
 ![](/assets/img2.png)
 ![](/assets/img3.png)
-## pom.xml引入Wecloud底层Jar包
+## 引入Wecloud底层Jar包
 ```xml:pom.xml
 <parent>
     <groupId>com.navinfo.wecloud</groupId>

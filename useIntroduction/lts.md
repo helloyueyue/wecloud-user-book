@@ -4,7 +4,7 @@ Zookeeper集群：192.168.146.83:2181,192.168.146.84:2181,192.168.146.85:2181<br
 JobTracker：192.168.85.72 3501 3502<br/>
 LTS-Admin：http://192.168.146.83:8001/ltsAdmin/node-manager.htm (用户名密码：admin admin)<br/>
 ## 引入lts相关jar包
-```
+```xml:pom.xml
 <!--LTS-->
     <dependency>
         <groupId>com.github.ltsopensource</groupId>
@@ -34,7 +34,7 @@ LTS-Admin：http://192.168.146.83:8001/ltsAdmin/node-manager.htm (用户名密�
 ```
 ## Application启动类中添加@EnableJobClient和@EnableTaskTracker注解
 ## 配置文件中分别加入jobclient和tasktracker相关的配置
-```
+```properties:application.properties
 #lts config
 lts.jobclient.cluster-name=wecloud_cluster
 lts.jobclient.registry-address=zookeeper://192.168.146.83:2181,zookeeper://192.168.146.84:2181,zookeeper://192.168.146.85:2181

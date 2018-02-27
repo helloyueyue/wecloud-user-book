@@ -1,6 +1,6 @@
 # mybatis使用说明
 ## 引入mybatis相关jar包
-```
+```xml:pom.xml
 <!-- mysql依赖 -->
 <dependency>
     <groupId>mysql</groupId>
@@ -55,7 +55,7 @@
 </profiles>
 ```
 ## 配置文件
-```
+```properties:application.properties
 #mysql config
 spring.datasource.url=jdbc:mysql://localhost:3306/wecloud_demo?useUnicode=true&amp;characterEncoding=UTF-8
 spring.datasource.username=root
@@ -68,8 +68,7 @@ mybatis.mapperLocations=classpath:sqlmap/*Mapper.xml
 #将mapper一级的日志级别设为debug模式可以打印sql语句
 logging.level.com.navinfo.wecloud.demo.mapper=debug
 ```
-generatorConfig.xml
-```
+```xml:generatorConfig.xml
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE generatorConfiguration
         PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
@@ -119,7 +118,7 @@ generatorConfig.xml
 ## 类定义
 定义UserInfo实体类和在wecloud_demo数据库中创建对应的userinfo表。<br/>
 定义UserInfoMapper类：
-```
+```java:UserInfoMapper.java
 package com.navinfo.wecloud.demo.mapper;
 
 import com.navinfo.wecloud.demo.bean.UserInfo;
@@ -157,7 +156,7 @@ public interface UserInfoMapper {
 Profiles中勾选mybatis_generator启动项目，会在resources的sqlmap文件夹下生成对应的UserInfoMapper.xml文件。<br/>
 ## Mybatis分页用法
 定义分页插件：
-```
+```java:MySQLLimitPlugin.java
 package com.navinfo.wecloud.demo.plugin;
 
 import java.util.List;
@@ -260,7 +259,7 @@ public class MySQLLimitPlugin extends PluginAdapter {
 }
 ```
 在UserInfoExample类中添加limit和offset属性以及对应set/get方法。
-```
+```java:UserInfoExample.java
 private Integer limit;
 private Integer offset;
 public void setLimit(Integer limit) {
