@@ -1,11 +1,9 @@
 # 开发环境
 推荐开发工具：Intelli IDEA
-
 ## 在Intelli IDEA下创建maven项目
 ![](/assets/img1.png)
 ![](/assets/img2.png)
 ![](/assets/img3.png)
-
 ## pom.xml引入Wecloud底层Jar包
 ```
 <parent>
